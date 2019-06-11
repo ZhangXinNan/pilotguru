@@ -7,6 +7,7 @@ import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.media.MediaScannerConnection;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Surface;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SensorAndVideoRecorder {
+  private static final String TAG="SensorAndVideoRecorder";
   private final File storageDir;
   private final MediaRecorder videoRecorder = new MediaRecorder();
   private final SensorDataSaver sensorRecorder;
@@ -25,6 +27,7 @@ public class SensorAndVideoRecorder {
 
   public SensorAndVideoRecorder(@NonNull Activity parentActivity, @NonNull File storageDir) {
     this.storageDir = storageDir;
+    Log.i(TAG, this.storageDir.toString());
     this.sensorRecorder = new SensorDataSaver(parentActivity);
   }
 

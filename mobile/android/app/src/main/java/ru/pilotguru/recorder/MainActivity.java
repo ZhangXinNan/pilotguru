@@ -85,8 +85,9 @@ public class MainActivity extends Activity {
   private CameraDevice cameraDevice;
   private CameraCaptureSession cameraCaptureSession;
 
-  private SensorAndVideoRecorder recorder = new SensorAndVideoRecorder(this,
-      new File(Environment.getExternalStorageDirectory(), "PilotGuru"));
+//  private SensorAndVideoRecorder recorder = new SensorAndVideoRecorder(this,
+//      new File(Environment.getExternalStorageDirectory(), "PilotGuru"));
+  private SensorAndVideoRecorder recorder = new SensorAndVideoRecorder(this, new File("/sdcard/0/", "PilotGuru"));
 
   private final SurfaceTextureListener textureStatusListener = new SurfaceTextureListener() {
     @Override
