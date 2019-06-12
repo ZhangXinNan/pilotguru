@@ -22,13 +22,13 @@ public class SensorAndVideoRecorder {
   private static final String TAG="SensorAndVideoRecorder";
   private final File storageDir;
   private final MediaRecorder videoRecorder = new MediaRecorder();
-  private final SensorDataSaver sensorRecorder;
+  private final SensorDataTxtSaver sensorRecorder;
   private File videoFile;
 
   public SensorAndVideoRecorder(@NonNull Activity parentActivity, @NonNull File storageDir) {
     this.storageDir = storageDir;
     Log.i(TAG, this.storageDir.toString());
-    this.sensorRecorder = new SensorDataSaver(parentActivity);
+    this.sensorRecorder = new SensorDataTxtSaver(parentActivity);
   }
 
   public Surface start(@NonNull CamcorderProfile profile, TextView textViewFps,
@@ -85,7 +85,7 @@ public class SensorAndVideoRecorder {
     return sensorRecorder.isRecording();
   }
 
-  public SensorDataSaver getSensorDataSaver() {
+  public SensorDataTxtSaver getSensorDataSaver() {
     return sensorRecorder;
   }
 }
